@@ -8,6 +8,7 @@ from core.user.serializers import UserSerializer
 class LoginSerializer(TokenObtainPairSerializer):
 
     def validate(self, attrs):
+        # print("self.user: ", self.user)
         data = super().validate(attrs)
 
         refresh = self.get_token(self.user)
