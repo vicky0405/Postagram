@@ -12,9 +12,7 @@ class LoginViewSet(ViewSet):
     http_method_names = ['post']
 
     def create(self, request, *args, **kwargs):
-        print("request.data: ", request.data)
-        serializer = self.serializer_class(data=request.data)
-        print("serializer: ", serializer)
+        serializer = self.serializer_class(data=request.data, context={'request': request})
         try:
             serializer.is_valid(raise_exception=True)
         except TokenError as e:

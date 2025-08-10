@@ -6,6 +6,7 @@ from core.post.models import Post
 from core.user.models import User
 from core.user.serializers import UserSerializer
 
+from django.conf import settings
 class PostSerializer(AbstractSerializer):
 
     author = serializers.SlugRelatedField(queryset=User.objects.all(), slug_field='public_id')
@@ -21,7 +22,7 @@ class PostSerializer(AbstractSerializer):
     def to_representation(self, instance):
         rep = super().to_representation(instance)
         author = User.objects.get_object_by_public_id(rep["author"])
-        rep["author"] = UserSerializer(author).data
+        rep["author"] = UserSerializer(author, context=self.context).data
         return rep
     
     def get_liked(self, instance):

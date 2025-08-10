@@ -6,14 +6,12 @@ from core.user.serializers import UserSerializer
 
 
 class LoginSerializer(TokenObtainPairSerializer):
-
+    serializer_class = UserSerializer
     def validate(self, attrs):
-        # print("self.user: ", self.user)
         data = super().validate(attrs)
 
         refresh = self.get_token(self.user)
-
-        data['user'] = UserSerializer(self.user).data
+        data['user'] = self.serializer_class(self.user, context=self.context).data
         data['refresh'] = str(refresh)
         data['access'] = str(refresh.access_token)
 
