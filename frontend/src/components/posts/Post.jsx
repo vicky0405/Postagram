@@ -8,7 +8,6 @@ import {
 } from "@ant-design/icons";
 import { Button, Modal, Form, Image, Card, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { randomAvatar } from "../../utils";
 import axiosService from "../../helpers/axios";
 import Toaster from "../Toaster";
 import { getUser } from "../../hooks/user.actions";
@@ -61,7 +60,7 @@ function Post(props) {
           <Card.Title className="d-flex flex-row justify-content-between">
               <div className="d-flex flex-row">
                   <Image
-                      src={randomAvatar()}
+                      src={user.avatar}
                       roundedCircle
                       width={48}
                       height={48}
