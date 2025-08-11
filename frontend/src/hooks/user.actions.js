@@ -95,4 +95,4 @@ function useUserActions() {
   }
 
 
-export { useUserActions, getUser, getAccessToken, getRefreshToken };
+export { useUserActions, getUser, getAccessToken, getRefreshToken, setUserData };

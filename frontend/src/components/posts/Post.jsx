@@ -52,7 +52,7 @@ function Post(props) {
 
   return (
     <>
-      <Card className="rounded-3 my-4">
+      <Card className="rounded-3 my-4" data-testid="post-test">
         
         {/* Add card body here*/}
 

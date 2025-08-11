@@ -57,6 +57,7 @@ function CreatePost(props) {
           type="text"
           placeholder="Write a post"
           onClick={handleShow}
+           data-testid="show-modal-form"
         />
       </Form.Group>
 
@@ -66,10 +67,11 @@ function CreatePost(props) {
         <Modal.Title>Create Post</Modal.Title>
       </Modal.Header>
       <Modal.Body className="border-0">
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <Form noValidate validated={validated} onSubmit={handleSubmit} data-testid="create-post-form">
           <Form.Group className="mb-3">
             <Form.Control
               name="body"
+              data-testid="post-body-field"
               value={form.body}
               onChange={(e) => setForm({ ...form, body: e.target.value })}
               as="textarea"
@@ -83,6 +85,7 @@ function CreatePost(props) {
           variant="primary"
           onClick={handleSubmit}
           disabled={form.body === undefined}
+          data-testid="create-post-submit"
         >
           Post
         </Button>

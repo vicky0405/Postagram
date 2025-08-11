@@ -41,6 +41,7 @@ function LoginForm() {
       noValidate
       validated={validated}
       onSubmit={handleSubmit}
+      data-testid="login-form"
     >
       <Form.Group className="mb-3">
         <Form.Label>Username</Form.Label>
@@ -50,6 +51,7 @@ function LoginForm() {
           required
           type="text"
           placeholder="Enter username"
+          data-testid="username-field"
         />
         <Form.Control.Feedback type="invalid">
           This file is required.
@@ -65,6 +67,7 @@ function LoginForm() {
           required
           type="password"
           placeholder="Password"
+          data-testid="password-field"
         />
         <Form.Control.Feedback type="invalid">
           Please provide a valid password.

@@ -57,6 +57,7 @@ function RegistrationForm() {
       noValidate
       validated={validated}
       onSubmit={handleSubmit}
+      data-testid="register-form"
     >
       <Form.Group className="mb-3">
         <Form.Label>First Name</Form.Label>
@@ -66,6 +67,7 @@ function RegistrationForm() {
           required
           type="text"
           placeholder="Enter first name"
+          data-testid="first-name-field"
         />
         <Form.Control.Feedback type="invalid">
           This file is required.
@@ -80,6 +82,7 @@ function RegistrationForm() {
           required
           type="text"
           placeholder="Enter last name"
+          data-testid="last-name-field"
         />
         <Form.Control.Feedback type="invalid">
           This file is required.
@@ -93,6 +96,7 @@ function RegistrationForm() {
           required
           type="text"
           placeholder="Enter username"
+          data-testid="username-field"
         />
         <Form.Control.Feedback type="invalid">
           This file is required.
@@ -106,6 +110,7 @@ function RegistrationForm() {
           required
           type="email"
           placeholder="Enter email"
+          data-testid="email-field"
         />
         <Form.Control.Feedback type="invalid">
           Please provide a valid email.
@@ -120,6 +125,7 @@ function RegistrationForm() {
           required
           type="password"
           placeholder="Password"
+          data-testid="password-field"
         />
         <Form.Control.Feedback type="invalid">
           Please provide a valid password.
@@ -133,6 +139,7 @@ function RegistrationForm() {
           as="textarea"
           rows={3}
           placeholder="A simple bio ... (Optional)"
+          data-testid="bio-field"
         />
       </Form.Group>
       <div className="text-content text-danger">{error && <p>{error}</p>}</div>
