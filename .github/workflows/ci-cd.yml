@@ -15,14 +15,14 @@ jobs:
     - name: Injecting environment vars
       run: |
         echo "SECRET_KEY=test_foo
-        DATABASE_NAME=test_coredb
-        DATABASE_USER=test_core
-        DATABASE_PASSWORD=12345678
-        DATABASE_HOST=test_postagram_db
+        DATABASE_NAME=coredb
+        DATABASE_USER=core
+        DATABASE_PASSWORD=123
+        DATABASE_HOST=postagram_db
         DATABASE_PORT=5432
-        POSTGRES_USER=test_core
-        POSTGRES_PASSWORD=12345678
-        POSTGRES_DB=test_coredb
+        POSTGRES_USER=core
+        POSTGRES_PASSWORD=123
+        POSTGRES_DB=coredb
         ENV=TESTING
         DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost
           " >> .env
