@@ -14,7 +14,7 @@ class PostSerializer(AbstractSerializer):
     likes_count = serializers.SerializerMethodField()
 
     def validate_author(self, value):
-        print(f"request serialzier in validate author: {self.context["request"]}\n")
+        print(f"request serialzier in validate author: {self.context['request']}\n")
         if self.context["request"].user != value:
             raise ValidationError("You can't create a post for another user.")
         return value
