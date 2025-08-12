@@ -26,7 +26,7 @@ services:
      - .:/app
      - uploads_volume:/app/uploads
     depends_on:
-     db
+     - db
      
   db:
     container_name: postagram_db
