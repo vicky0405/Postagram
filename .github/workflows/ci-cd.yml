@@ -35,6 +35,9 @@ jobs:
 
   deploy:
       name: Deploying on EC2 via SSH
+      defaults:
+      run:
+        working-directory: backend
       if: ${{ github.event_name == 'push' }}
       needs: [build-test]
       runs-on: ubuntu-latest
